@@ -1,94 +1,203 @@
-/* ===== MOBILE FIX ===== */
-* {
-    -webkit-tap-highlight-color: transparent;
-}
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE FIX */
+/* ============================= */
 
 html, body {
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
-    position: fixed;
 }
 
-body {
-    min-height: 100vh;
-    min-height: 100dvh;
-    -webkit-overflow-scrolling: touch;
+/* HOME SCREEN */
+.home-screen {
+    padding: 20px;
+    text-align: center;
 }
 
-/* Mobile screen chhoti karne ke liye */
-@media (max-width: 768px) {
-    .title { 
-        font-size: 2rem !important; 
-        letter-spacing: 4px !important; 
-    }
-    .music-icon { 
-        font-size: 2.2rem !important; 
-    }
-    .song-name-3d { 
-        font-size: 1rem !important; 
-        letter-spacing: 1.5px !important; 
-    }
-    .start-btn { 
-        padding: 12px 40px !important; 
-        font-size: 1rem !important; 
-        letter-spacing: 2px !important; 
-    }
-    .lyric-line { 
-        font-size: 1.4rem !important; 
-        margin: 35px 0 !important; 
-    }
-    .status { 
-        font-size: 8px !important; 
-        padding: 6px 14px !important; 
-        top: 12px !important; 
-    }
-    .afzal-box { 
-        top: 50px !important; 
-        right: 12px !important; 
-        padding: 5px 12px !important; 
-        font-size: 8px !important; 
-    }
-    .chip { 
-        padding: 5px 12px !important; 
-        font-size: 8px !important; 
-    }
+/* TITLE */
+.title {
+    font-size: clamp(2rem, 8vw, 5rem);
+    letter-spacing: 5px;
+    text-align: center;
 }
 
+.music-icon {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    margin-left: 0;
+}
+
+.title-container {
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* SONG NAME */
+.song-name-3d {
+    font-size: clamp(1rem, 5vw, 2rem) !important;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    letter-spacing: 2px;
+}
+
+/* PLAY BUTTON */
+.start-btn {
+    width: 90%;
+    max-width: 320px;
+    padding: 16px 20px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* TOP STATUS */
+.status {
+    width: auto;
+    max-width: 90%;
+    font-size: 10px;
+    padding: 8px 16px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* AFZAL BOX */
+.afzal-box {
+    top: 15px;
+    right: 15px;
+    padding: 8px 14px;
+    font-size: 9px;
+}
+
+/* PLAYER CREATOR */
+.player-creator {
+    top: 15px !important;
+    right: 15px !important;
+    padding: 10px 18px;
+    font-size: 10px;
+}
+
+/* MENU BUTTONS */
+.menu-btns,
+.info-boxes {
+    width: 100%;
+    padding: 0 10px;
+    gap: 10px;
+    justify-content: center;
+}
+
+.chip,
+.info-box {
+    font-size: 11px;
+    padding: 8px 16px;
+    letter-spacing: 1px;
+}
+
+/* MODALS */
+.modal-content,
+.popup-content {
+    width: 92%;
+    max-width: 95%;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.modal-title {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+}
+
+.modal-text {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* LYRICS */
+.lyrics-wrapper {
+    padding: 40vh 10px;
+}
+
+.lyric-line {
+    font-size: clamp(1.3rem, 6vw, 3rem);
+    margin: 45px 0;
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+.lyric-line.active {
+    transform: scale(1.05);
+}
+
+/* CONTROLS */
+.controls {
+    bottom: 20px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10px;
+}
+
+.btn {
+    padding: 10px 18px;
+    font-size: 11px;
+}
+
+/* CREDIT BOX */
+.credit-box-3d {
+    width: 90%;
+    padding: 16px;
+}
+
+.credit-text {
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* LETTER POPUP */
+.popup-letter {
+    width: 95%;
+    max-width: 95%;
+}
+
+.letter-content {
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+/* MOBILE EXTRA */
 @media (max-width: 480px) {
-    .title { 
-        font-size: 1.6rem !important; 
-        letter-spacing: 2px !important; 
+
+    body {
+        overflow-x: hidden;
     }
-    .music-icon { 
-        font-size: 1.8rem !important; 
+
+    .title {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
     }
-    .song-name-3d { 
-        font-size: 0.85rem !important; 
+
+    .song-name-3d {
+        font-size: 1rem !important;
     }
-    .start-btn { 
-        padding: 10px 35px !important; 
-        font-size: 0.9rem !important; 
+
+    .start-btn {
+        font-size: 0.9rem;
+        padding: 14px 18px;
     }
-    .lyric-line { 
-        font-size: 1.1rem !important; 
-        margin: 25px 0 !important; 
+
+    .lyric-line {
+        font-size: 1.4rem;
     }
-    .title-container { 
-        gap: 8px !important; 
+
+    .controls {
+        gap: 8px;
+    }
+
+    .btn {
+        font-size: 10px;
+        padding: 8px 14px;
     }
 }
-
-/* iPhone Notch Fix */
-@supports (padding: max(0px)) {
-    .status { 
-        top: max(12px, env(safe-area-inset-top)) !important; 
-    }
-    .afzal-box { 
-        top: max(50px, calc(env(safe-area-inset-top) + 38px)) !important; 
-    }
-}
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800;900&family=Orbitron:wght@900&display=swap');
