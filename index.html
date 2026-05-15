@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics Player - MD AFZAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <audio id="bgMusic" preload="auto">
+        <source src="love.mp3" type="audio/mpeg">
+    </audio>
+
+    
+
+    <div class="home-screen" id="homeScreen">
+        <div class="title-container">
+            <div class="music-icon">🎵</div>
+            <h1 class="title">LYRICS PLAYER</h1>
+        </div>
+
+        <div class="song-name-3d">Bekarar Yeh Dil Tera</div>
+<!-- 
+     <div class="rcsc-container">
+        <div class="rcsc-text">
+               <h1 class="title"> BEKARAR YEH DIL TERA</h1>
+                </div>
+         </div> -->
+
+             <!-- <div class="lyrics-container">
+                <div class="lyrics-text">
+                     BEKARAR YEH DIL TERA
+                </div>
+          </div> -->
+
+
+  <div class="menu-btns">
+        <button class="chip" onclick="openModal('aboutModal')">ABOUT</button>
+        <button class="chip" onclick="openModal('faqModal')">FAQ</button>
+        <button class="chip" onclick="openModal('tipsModal')">TIPS</button>
+        <button class="chip" onclick="openModal('contactModal')">CONTACT</button>
+        <button class="chip hd-chip" onclick="openModal('hdModal')">HD</button>
+    </div>
+
+    <!-- ABOUT MODAL -->
+    <div class="modal" id="aboutModal">
+        <div class="modal-content">
+            <h2 class="modal-title">📖 ABOUT</h2>
+            <div class="modal-text">
+                <p><strong>Lyrics Player by MD AFZAL</strong></p>
+                <ul>
+                    <li>✨ Premium 3D neon buttons with real depth</li>
+                    <li>🚀 60 FPS smooth animation, zero lag guarantee</li>
+                    <li>💎 Glass morphism + soft glow effect</li>
+                    <li>⚡ Har button click pe 3D press feedback</li>
+                </ul>
+            </div>
+            <button class="close-btn" onclick="closeModal('aboutModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- FAQ MODAL -->
+    <div class="modal" id="faqModal">
+        <div class="modal-content">
+            <h2 class="modal-title">❓ FAQ</h2>
+            <div class="modal-text">
+                <ul>
+                    <li><strong>Q: 3D effect kaise banaya?</strong><br>A: `transform: perspective + rotateX` aur `box-shadow` ki layers</li>
+                    <li><strong>Q: Glow halka kaise kare?</strong><br>A: `box-shadow` me opacity 0.5 kar di aur blur kam kiya</li>
+                    <li><strong>Q: Mobile me chalega?</strong><br>A: Haan, touch pe bhi 3D lift effect milega</li>
+                    <li><strong>Q: Color kaise badle?</strong><br>A: CSS me `#00f0ff` ki jagah apna color code daal do</li>
+                </ul>
+            </div>
+            <button class="close-btn" onclick="closeModal('faqModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- TIPS MODAL -->
+    <div class="modal" id="tipsModal">
+        <div class="modal-content">
+            <h2 class="modal-title">💡 PRO TIPS</h2>
+            <div class="modal-text">
+                <ul>
+                    <li>🔥 Hover pe box 12px upar uthega + soft glow</li>
+                    <li>🎯 Border halka RGB me ghumta rahega</li>
+                    <li>📱 Mobile me dabane pe asli button jaisa press hoga</li>
+                    <li>🎨 Background glass jaisa transparent + blur effect</li>
+                    <li>⚡ ESC key dabao ya bahar click karo = modal band</li>
+                </ul>
+            </div>
+            <button class="close-btn" onclick="closeModal('tipsModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <h2 class="modal-title">📞 CONTACT</h2>
+            <div class="modal-text">
+                <p><strong>Developer: MD AFZAL</strong></p>
+                <ul>
+                    <li>👑 3D UI/UX Expert - Neon Glow Specialist</li>
+                    <li>⚡ Custom animation + hover effects banata hun</li>
+                    <li>📲 WhatsApp: +91 XXXXX XXXXX</li>
+                    <li>💎 Premium website chahiye to DM karo</li>
+                </ul>
+            </div>
+            <button class="close-btn" onclick="closeModal('contactModal')">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- HD MODAL -->
+    <div class="modal" id="hdModal">
+        <div class="modal-content">
+            <h2 class="modal-title">🎬 HD QUALITY</h2>
+            <div class="modal-text">
+                <p><strong>Premium 3D Button System</strong></p>
+                <ul>
+                    <li>🎯 60 FPS butter smooth hover animation</li>
+                    <li>🌈 Soft neon glow + RGB border</li>
+                    <li>🏆 Real 3D lift effect on mouse enter</li>
+                    <li>💎 Crystal clear text with depth shadow</li>
+                    <li>🔮 Advanced glass morphism background</li>
+                    <li>⚡ Lightning fast render, no frame drop</li>
+                </ul>
+            </div>
+            <button class="close-btn" onclick="closeModal('hdModal')">CLOSE</button>
+        </div>
+    </div>
+          
+        <!-- 👇 ISKO BOXES KE UPAR SHIFT KAR DIYA 👇
+        <div class="song-name-3d">Bekarar Yeh Dil Tera</div> -->
+
+
+<!-- <div class="info-boxes">
+    <div class="info-box" onclick="openModal('about')">ABOUT</div>
+    <div class="info-box" onclick="openModal('faq')">FAQ</div>
+    <div class="info-box" onclick="openModal('tips')">TIPS</div>
+    <div class="info-box" onclick="openModal('contact')">CONTACT</div>
+    <div class="info-box hd-dark" onclick="openModal('hd')">HD</div>
+</div> -->
+
+<!-- <div class="modal" id="aboutModal">
+    <div class="modal-content">
+        <h2 class="modal-title">📖 ABOUT</h2>
+        <div class="modal-text">
+            <p><strong>Lyrics Player by MD AFZAL</strong></p>
+            <p>Ye 3D neon glow buttons hai jo mouse hover pe uthte hai.</p>
+            <p>Har button ka apna kaam hai - click karke dekho.</p>
+            <p>HD quality me 60fps smooth animation ke saath.</p>
+        </div>
+        <button class="close-btn" onclick="closeModal('aboutModal')">CLOSE</button>
+    </div>
+</div>
+
+<div class="modal" id="faqModal">
+    <div class="modal-content">
+        <h2 class="modal-title">❓ FAQ</h2>
+        <div class="modal-text">
+            <ul>
+                <li><strong>Q: Box kaise uth raha?</strong><br>A: CSS me top: -8px aur shadow use kiya</li>
+                <li><strong>Q: Glow kaise aa raha?</strong><br>A: box-shadow me 0 0 35px rgba diya</li>
+                <li><strong>Q: HD button dark kyun?</strong><br>A: Photo me waisa hi hai isliye</li>
+            </ul>
+        </div>
+        <button class="close-btn" onclick="closeModal('faqModal')">CLOSE</button>
+    </div>
+</div>
+
+<div class="modal" id="tipsModal">
+    <div class="modal-content">
+        <h2 class="modal-title">💡 TIPS</h2>
+        <div class="modal-text">
+            <ul>
+                <li>Hover pe box 8px upar uthega</li>
+                <li>Glow 2x strong ho jayega hover pe</li>
+                <li>Mobile me bhi kaam karega touch pe</li>
+                <li>Color change karne ko #00f0ff badlo</li>
+            </ul>
+        </div>
+        <button class="close-btn" onclick="closeModal('tipsModal')">CLOSE</button>
+    </div>
+</div>
+
+<div class="modal" id="contactModal">
+    <div class="modal-content">
+        <h2 class="modal-title">📞 CONTACT</h2>
+        <div class="modal-text">
+            <p><strong>Developer: MD AFZAL</strong></p>
+            <p>3D buttons expert - hover effect specialist</p>
+            <p>WhatsApp: +91 XXXXX XXXXX</p>
+            <p>Custom glow chahiye to contact karo</p>
+        </div>
+        <button class="close-btn" onclick="closeModal('contactModal')">CLOSE</button>
+    </div>
+</div>
+
+<div class="modal" id="hdModal">
+    <div class="modal-content">
+        <h2 class="modal-title">🎬 HD QUALITY</h2>
+        <div class="modal-text">
+            <p><strong>Premium 3D Buttons</strong></p>
+            <ul>
+                <li>60 FPS smooth hover animation</li>
+                <li>Multi-layer neon glow effect</li>
+                <li>3D lift on mouse enter</li>
+                <li>Crystal clear text shadow</li>
+            </ul>
+        </div>
+        <button class="close-btn" onclick="closeModal('hdModal')">CLOSE</button>
+    </div>
+</div> -->
+
+<!-- 3D Credit Box -->
+<div class="credit-box-3d" onclick="openCreditPopup()">
+    <div class="credit-glow"></div>
+    <div class="credit-text">CREATE BY MD AFZAL</div>
+</div>
+
+<!-- Popup - MD Afzal Ke Baare Me -->
+<div id="credit-modal" class="popup-overlay" onclick="closeCreditPopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+        <h2>CREATE BY: MD AFZAL</h2>
+        <div class="bio-content">
+            <p>✦ <strong>Developer & Designer</strong> - Code se art banata hun</p>
+            <p>✦ <strong>Music Lover</strong> - Har beat me emotion dhundta hun</p>
+            <p>✦ <strong>Creative Mind</strong> - Soch unlimited, kaam perfection ke saath</p>
+            <p>✦ <strong>Vision</strong> - Tech + Art ko milake kuch naya banana</p>
+            <p>✦ <strong>Motto</strong> - "Jo dil se banta hai, wo dil tak pahunchta hai"</p>
+            <p>✦ <strong>Skills</strong> - Web Design, UI/UX, Frontend, Music Production</p>
+            <p>✦ <strong>Goal</strong> - Har project me kuch alag, kuch yaadgar dena ✨</p>
+        </div>
+        <button class="popup-close-btn" onclick="closeCreditPopup()">CLOSE</button>
+    </div>
+</div>
+
+
+        <!-- <div class="song-name-3d">Bekarar Yeh Dil Tera</div> -->
+        <button class="start-btn" onclick="startPlayer()">
+            <span>▶</span>
+            <span>PLAY</span>
+        </button>
+    </div>
+
+   
+    <div class="player-screen" id="playerScreen">
+        <div class="status" id="status">Abhi: 0:00 | Lyrics: 0:17 me | Wait: 17.0s</div>
+        <!-- <div class="player-creator">BY <span>MD AFZAL</span></div> -->
+          <!-- 👇 Tera wala div 👇 -->
+    <!-- <div class="player-creator" id="afzalBtn">
+        BY <span>MD AFZAL</span>
+    </div> -->
+
+<div class="afzal-box" onclick="showLetter()">
+        <span class="by-text">BY</span><span class="name-text">MD AFZAL</span>
+    </div>
+
+    <div id="letterPopup">
+        <canvas id="starsCanvas"></canvas>
+        <div class="popup-letter">
+            <div class="letter-header">
+                <div class="stamp">💡</div>
+                <div class="to-from">
+                    <div class="to">FROM: MD AFZAL</div>
+                    <div class="from">TO: MY FANS</div>
+                </div>
+            </div>
+            
+            <div class="letter-body">
+                <div class="date">Date: 15 Oct 2026</div>
+                <div class="subject">Subject: <span>Creative Developer Ka Paigaam</span></div>
+                
+                <div class="letter-content">
+                    <p>Namaste Doston,</p>
+                    
+                    <p>Main <span class="highlight">MD AFZAL</span> - Ek aisa <span class="highlight">Creative Genius</span> aur <span class="highlight">Master Developer</span> jo har idea ko next-level design me convert kar deta hai.</p>
+                    
+                    <p><span class="highlight">Clean Code</span>, <span class="highlight">Stunning 3D Effects</span>, aur <span class="highlight">Pixel-Perfect UI</span> ka baadshah hun main. Har project me <span class="highlight">100% Dedication</span> aur <span class="highlight">Innovation</span> ke saath kaam karta hun.</p>
+                    
+                    <p>Mera motto: <span class="quote">"Jo dil se banta hai, wo dil tak pahunchta hai"</span></p>
+                    
+                    <p>Tech + Art ko milake kuch naya banana mera vision hai. Soch unlimited, kaam perfection ke saath! 🚀</p>
+                    
+                    <div class="signature">
+                        <div>Thank You,</div>
+                        <div class="sign-name">MD AFZAL</div>
+                        <div class="sign-title">Creative Developer & UI/UX Expert</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="letter-close" onclick="closeLetter()">
+                <span>✕</span> CLOSE LETTER
+            </button>
+        </div>
+    </div>
+
+
+
+
+
+    
+        <div class="scroll-hint" id="scrollHint">↑ ↓ Scroll Kar Sakte Ho</div>
+        <div class="lyrics-wrapper" id="lyricsWrapper">
+            <div class="lyrics-container" id="lyricsContainer"></div>
+        </div>
+        <div class="controls">
+            <button class="btn" onclick="togglePlayPause()" id="playBtn">⏸ PAUSE</button>
+            <button class="btn" onclick="backToHome()">← BACK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

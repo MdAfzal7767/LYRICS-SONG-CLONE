@@ -1,0 +1,1567 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800;900&family=Orbitron:wght@900&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #000;
+    background: url('image01.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+
+
+.player-creator {
+    position: fixed !important;
+    top: 25px !important;
+    right: 60px !important;
+    margin-left: 0 !important;
+    background: linear-gradient(145deg, #d8d8d8, #c0c0c0);
+    border: 4px solid #00d4e0;
+    color: #666;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    transform: none !important;
+    box-shadow: 
+        0 0 0 2px #00d4e0,
+        0 0 35px rgba(0,212,224,0.8),
+        0 4px 10px rgba(0,0,0,0.4) !important;
+    z-index: 9999 !important;
+    transition: all 0.3s;
+}
+
+.player-creator span {
+    color: #00d4e0;
+    text-shadow: 0 0 10px rgba(0,212,224,1);
+    font-weight: 900;
+}
+
+.player-creator:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 
+        0 0 0 3px #00f2ff,
+        0 0 55px rgba(0,242,255,1),
+        0 6px 15px rgba(0,0,0,0.5) !important;
+}
+
+
+/* ===== BACKGROUND FIX - ISKO SABSE UPAR DAAL DE ===== */
+
+
+/* BY MD AFZAL BOX - RGB BOTTOM BORDER */
+        .afzal-box {
+            position: fixed;
+            top: 25px;
+            right: 35px;
+            background: #f5f5f5;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            z-index: 100;
+            
+            /* 3D BOX */
+            box-shadow: 
+                0 6px 0 #888,
+                0 10px 18px rgba(0,0,0,0.4),
+                inset 0 2px 3px rgba(255,255,255,0.9),
+                inset 0 -2px 0 rgba(0,0,0,0.2);
+            
+            /* RGB BORDER NICHE - PHOTO JAISA */
+            border-bottom: 4px solid transparent;
+            background-image: 
+                linear-gradient(#f5f5f5, #f5f5f5),
+                linear-gradient(90deg, 
+                    #ff0000, #ff7f00, #ffff00, #00ff00, 
+                    #00ffff, #0000ff, #8b00ff, #ff0000);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            animation: rgbBorder 3s linear infinite, floatBox 3s ease-in-out infinite;
+            
+            transition: all 0.2s;
+        }
+
+        /* RGB ANIMATION */
+        @keyframes rgbBorder {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes floatBox {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+
+        /* BY 3D + COMPACT */
+        .afzal-box .by-text {
+            color: #333;
+            display: inline-block;
+            margin-right: 5px;
+            font-weight: 900;
+            font-size: 13px;
+            text-shadow: 
+                0 1px 0 #fff,
+                0 2px 0 #eee,
+                0 3px 0 #ddd,
+                0 4px 6px rgba(0,0,0,0.5);
+        }
+
+        /* MD AFZAL 3D + NEON */
+        .afzal-box .name-text {
+            color: #00d4e0;
+            display: inline-block;
+            text-shadow: 
+                0 1px 0 #00c4d4,
+                0 2px 0 #00b4c4,
+                0 3px 0 #00a4b4,
+                0 4px 6px rgba(0,0,0,0.4),
+                0 0 12px rgba(0,242,255,0.8);
+        }
+
+        /* HOVER PE EXTRA GLOW */
+        .afzal-box:hover {
+            box-shadow: 
+                0 6px 0 #777,
+                0 10px 18px rgba(0,0,0,0.4),
+                inset 0 2px 3px rgba(255,255,255,0.9),
+                inset 0 -2px 0 rgba(0,0,0,0.2),
+                0 0 30px rgba(0,242,255,0.8),
+                0 0 60px rgba(0,242,255,0.5);
+        }
+
+        .afzal-box:active {
+            transform: translateY(3px) scale(0.98);
+            box-shadow: 
+                0 3px 0 #777,
+                0 6px 12px rgba(0,0,0,0.5),
+                inset 0 2px 3px rgba(255,255,255,0.9),
+                inset 0 -2px 0 rgba(0,0,0,0.3);
+            animation: rgbBorder 3s linear infinite;
+        }
+
+        /* LETTER POPUP - HILNE WALA BURADA */
+        #letterPopup {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 50%, #3d2415 100%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        #starsCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .popup-letter {
+            background: linear-gradient(145deg, rgba(255,254,245,0.97), rgba(245,243,230,0.97));
+            border: 2px solid #d4af37;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 380px;
+            box-shadow: 
+                0 0 0 1px #b8941f,
+                0 25px 60px rgba(0,0,0,0.6),
+                0 0 100px rgba(255,180,80,0.7),
+                inset 0 2px 0 rgba(255,255,255,0.9);
+            animation: letterPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            margin: auto;
+            backdrop-filter: blur(10px);
+            z-index: 10;
+        }
+
+        @keyframes letterPop {
+            from { transform: scale(0.7) translateY(50px) rotateX(25deg); opacity: 0; }
+            to { transform: scale(1) translateY(0) rotateX(0deg); opacity: 1; }
+        }
+
+        .letter-header {
+            background: linear-gradient(180deg, #a0522d, #8b4513);
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #d4af37;
+            border-radius: 10px 10px 0 0;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
+        }
+
+        .stamp {
+            font-size: 26px;
+            background: linear-gradient(145deg, #ffd700, #ffed4e);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 30px rgba(255,215,0,0.9), inset 0 2px 0 rgba(255,255,255,0.5);
+            border: 2px solid #b8941f;
+            flex-shrink: 0;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 30px rgba(255,215,0,0.9), inset 0 2px 0 rgba(255,255,255,0.5); }
+            50% { box-shadow: 0 0 45px rgba(255,215,0,1), inset 0 2px 0 rgba(255,255,255,0.6); }
+        }
+
+        .to-from {
+            color: #fff8dc;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .to { margin-bottom: 2px; }
+
+        .letter-body {
+            padding: 18px 20px;
+            background: rgba(255,254,245,0.85);
+            color: #2c2416;
+            line-height: 1.6;
+        }
+
+        .date {
+            text-align: right;
+            font-size: 8px;
+            color: #8b7355;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: 'Courier New', monospace;
+        }
+
+        .subject {
+            font-size: 10px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #d4af37;
+            color: #654321;
+        }
+
+        .subject span {
+            color: #8b4513;
+            font-style: italic;
+        }
+
+        .letter-content {
+            font-size: 10px;
+            text-align: justify;
+            color: #3d3522;
+        }
+
+        .letter-content p {
+            margin-bottom: 10px;
+            text-indent: 15px;
+        }
+
+        .highlight {
+            color: #8b4513;
+            font-weight: 800;
+            background: linear-gradient(180deg, transparent 60%, #f4e4bc 60%);
+            padding: 0 2px;
+        }
+
+        .quote {
+            color: #654321;
+            font-style: italic;
+            font-weight: 700;
+            border-left: 2px solid #d4af37;
+            padding-left: 8px;
+            display: block;
+            margin: 8px 0;
+            font-size: 9px;
+        }
+
+        .signature {
+            margin-top: 18px;
+            text-align: right;
+            font-size: 9px;
+        }
+
+        .sign-name {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 20px;
+            color: #8b4513;
+            margin: 4px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .sign-title {
+            font-size: 7px;
+            color: #8b7355;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .letter-close {
+            width: 100%;
+            background: linear-gradient(180deg, #a0522d, #8b4513);
+            border: none;
+            border-top: 2px solid #d4af37;
+            color: #fff8dc;
+            padding: 10px;
+            font-weight: 900;
+            font-size: 9px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
+        }
+
+        .letter-close:active {
+            background: linear-gradient(180deg, #8b4513, #654321);
+        }
+
+        @media (max-width: 480px) {
+            .afzal-box {
+                top: 18px;
+                right: 25px;
+                padding: 8px 16px;
+                font-size: 10px;
+                letter-spacing: 1.5px;
+            }
+            
+            .afzal-box .by-text {
+                font-size: 11px;
+                margin-right: 4px;
+            }
+            
+            .popup-letter {
+                max-width: 95vw;
+            }
+            
+            .letter-body {
+                padding: 15px 16px;
+            }
+            
+            .letter-content {
+                font-size: 9px;
+            }
+            
+            .sign-name {
+                font-size: 18px;
+            }
+        }
+
+
+
+
+
+.song-name-3d {
+    font-size: 2.2rem !important;
+    margin-bottom: 50px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    
+    /* 👇 FULL 3D EFFECT 👇 */
+    transform: perspective(700px) rotateX(12deg) translateY(-50px) translateZ(15px) !important;
+    text-shadow: 0 5px 18px rgba(0, 0, 0, 0.4), 
+                 0 0 25px rgba(255, 107, 53, 0.3);
+    
+    animation: 
+        songColorChange 3s ease infinite,
+        songUpDown 2s ease-in-out infinite,
+        songNamePulse 3s ease-in-out infinite,
+        songGentleShake 4s ease-in-out infinite;
+    
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+@keyframes songColorChange {
+    0%   { color: #ff6b35; }
+    20%  { color: #ff006e; }
+    40%  { color: #8338ec; }
+    60%  { color: #3a86ff; }
+    80%  { color: #06ffa5; }
+    100% { color: #ff6b35; }
+}
+
+@keyframes songUpDown {
+    0%, 100% { transform: perspective(700px) rotateX(12deg) translateY(-80px) translateZ(15px); }
+    50% { transform: perspective(700px) rotateX(12deg) translateY(-80px) translateZ(25px); }
+}
+
+@keyframes songNamePulse {
+    0%, 100% { opacity: 0.9; filter: brightness(1); }
+    50% { opacity: 1; filter: brightness(1.2); }
+}
+
+@keyframes songGentleShake {
+    0%, 100% { transform: perspective(700px) rotateX(12deg) translateY(-80px) translateZ(15px) translateX(0px); }
+    25% { transform: perspective(700px) rotateX(12deg) translateY(-80px) translateZ(15px) translateX(-2px) translateY(-2px); }
+    50% { transform: perspective(700px) rotateX(12deg) translateY(-80px) translateZ(15px) translateX(2px) translateY(-1px); }
+    75% { transform: perspective(700px) rotateX(12deg) translateY(-80px) translateZ(15px) translateX(-1px) translateY(1px); }
+}
+
+
+
+.home-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: #000; */
+    perspective: 1000px;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    transform-style: preserve-3d;
+    transform: none; /* ← SIDHA */
+    animation: halkaHilna 3s ease-in-out infinite;
+}
+
+.music-icon {
+    font-size: 5rem;
+    font-weight: 900;
+    margin-left: -50px;
+    animation: allColors3D 21s ease infinite, musicHilna 2s ease-in-out infinite;
+}
+
+.title {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 15px;
+    margin-left: -5px;
+    font-family: 'Arial Black', sans-serif;
+    transform: none; /* ← SIDHA */
+    animation: allColors3D 21s ease infinite, textHilna 2s ease-in-out infinite;
+}
+
+@keyframes halkaHilna {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-2px) translateY(-2px); }
+    50% { transform: translateX(2px) translateY(-1px); }
+    75% { transform: translateX(-1px) translateY(2px); }
+}
+
+@keyframes musicHilna {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(-2deg); }
+}
+
+@keyframes textHilna {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-2px) scale(1.02); }
+}
+
+@keyframes allColors3D {
+    0%, 100% { 
+        color: #a8f5ff;
+        text-shadow: 
+            0 0 20px #a8f5ff,
+            0 0 40px #a8f5ff,
+            0 0 70px rgba(168, 245, 255, 0.5),
+            3px 3px 0 #4dd0e1,
+            6px 6px 0 #26c6da,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+    14.28% { 
+        color: #ffb3f5;
+        text-shadow: 
+            0 0 20px #ffb3f5,
+            0 0 40px #ffb3f5,
+            0 0 70px rgba(255, 179, 245, 0.5),
+            3px 3px 0 #f48fb1,
+            6px 6px 0 #f06292,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+    28.56% { 
+        color: #fff9b3;
+        text-shadow: 
+            0 0 20px #fff9b3,
+            0 0 40px #fff9b3,
+            0 0 70px rgba(255, 249, 179, 0.5),
+            3px 3px 0 #fff176,
+            6px 6px 0 #ffee58,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+    42.84% { 
+        color: #b3ffcc;
+        text-shadow: 
+            0 0 20px #b3ffcc,
+            0 0 40px #b3ffcc,
+            0 0 70px rgba(179, 255, 204, 0.5),
+            3px 3px 0 #81c784,
+            6px 6px 0 #66bb6a,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+    57.12% { 
+        color: #ffcc99;
+        text-shadow: 
+            0 0 20px #ffcc99,
+            0 0 40px #ffcc99,
+            0 0 70px rgba(255, 204, 153, 0.5),
+            3px 3px 0 #ffb74d,
+            6px 6px 0 #ffa726,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+    71.4% { 
+        color: #e1b3ff;
+        text-shadow: 
+            0 0 20px #e1b3ff,
+            0 0 40px #e1b3ff,
+            0 0 70px rgba(225, 179, 255, 0.5),
+            3px 3px 0 #ce93d8,
+            6px 6px 0 #ba68c8,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+    85.68% { 
+        color: #ff99b3;
+        text-shadow: 
+            0 0 20px #ff99b3,
+            0 0 40px #ff99b3,
+            0 0 70px rgba(255, 153, 179, 0.5),
+            3px 3px 0 #f48fb1,
+            6px 6px 0 #f06292,
+            9px 9px 25px rgba(0,0,0,0.9);
+    }
+}
+
+
+
+.start-btn {
+    background: linear-gradient(180deg, #7ef9ff 0%, #5de8f0 50%, #3dd7e6 100%);
+    background-size: 400% 400%;
+    animation: colorShift 24s ease infinite;
+    border: none;
+    color: #ffffff !important; /* ← PLAY TEXT WHITE */
+    padding: 20px 90px;
+    border-radius: 50px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: -20px;
+    margin-top: 40px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateX(20deg);
+    box-shadow: 
+        0 2px 0 rgba(255,255,255,0.5) inset,
+        0 -2px 0 rgba(0,0,0,0.2) inset,
+        0 0 60px rgba(126,249,255,0.5),
+        0 12px 0 #2ab8c4,
+        0 18px 35px rgba(0,0,0,0.7),
+        0 0 0 4px rgba(126,249,255,0.15);
+    transition: all 0.3s;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6); /* ← White text ke liye dark shadow */
+}
+
+.start-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+    border-radius: 50px 50px 0 0;
+    pointer-events: none;
+}
+
+/* 👇 LIGHT COLOR CHANGE ANIMATION 👇 */
+@keyframes colorShift {
+    0%, 100% { 
+        background: linear-gradient(180deg, #7ef9ff 0%, #5de8f0 50%, #3dd7e6 100%); /* LIGHT CYAN */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(126,249,255,0.5),
+            0 12px 0 #2ab8c4,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    12.5% { 
+        background: linear-gradient(180deg, #ff9ef7 0%, #ff7ef2 50%, #ff5eed 100%); /* LIGHT PINK */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(255,158,247,0.5),
+            0 12px 0 #e04dd4,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    25% { 
+        background: linear-gradient(180deg, #fff59e 0%, #fff07e 50%, #ffeb5e 100%); /* LIGHT YELLOW */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(255,245,158,0.5),
+            0 12px 0 #e6d44d,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    37.5% { 
+        background: linear-gradient(180deg, #9effb3 0%, #7eff9f 50%, #5eff8b 100%); /* LIGHT GREEN */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(158,255,179,0.5),
+            0 12px 0 #4de67a,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    50% { 
+        background: linear-gradient(180deg, #ffbe7e 0%, #ffaa5e 50%, #ff963e 100%); /* LIGHT ORANGE */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(255,190,126,0.5),
+            0 12px 0 #e6852d,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    62.5% { 
+        background: linear-gradient(180deg, #d49eff 0%, #c67eff 50%, #b85eff 100%); /* LIGHT PURPLE */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(212,158,255,0.5),
+            0 12px 0 #a74de6,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    75% { 
+        background: linear-gradient(180deg, #ff7e9e 0%, #ff5e88 50%, #ff3e72 100%); /* LIGHT RED */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(255,126,158,0.5),
+            0 12px 0 #e62d61,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+    87.5% { 
+        background: linear-gradient(180deg, #7eb4ff 0%, #5e9eff 50%, #3e88ff 100%); /* LIGHT BLUE */
+        box-shadow: 
+            0 2px 0 rgba(255,255,255,0.5) inset,
+            0 -2px 0 rgba(0,0,0,0.2) inset,
+            0 0 60px rgba(126,180,255,0.5),
+            0 12px 0 #2d77e6,
+            0 18px 35px rgba(0,0,0,0.7);
+    }
+}
+
+/* 👇 HOVER PE HOTSTAR STYLE + DONO TARAF BARABAR HILNA 👇 */
+.start-btn:hover {
+    animation: hotstarShake 0.5s ease-in-out infinite, colorShift 24s ease infinite;
+    transform: perspective(800px) rotateX(10deg) scale(1.06);
+    box-shadow: 
+        0 2px 0 rgba(255,255,255,0.6) inset,
+        0 -2px 0 rgba(0,0,0,0.4) inset,
+        0 0 70px rgba(126,249,255,1),
+        0 15px 0 #2ab8c4,
+        0 25px 45px rgba(0,0,0,1);
+}
+
+.start-btn:active {
+    transform: perspective(800px) rotateX(10deg) scale(1.03) translateY(6px);
+    box-shadow: 
+        0 2px 0 rgba(255,255,255,0.4) inset,
+        0 -2px 0 rgba(0,0,0,0.3) inset,
+        0 0 40px rgba(126,249,255,0.8),
+        0 6px 0 #2ab8c4,
+        0 12px 25px rgba(0,0,0,0.9);
+}
+
+/* 👇 DONO TARAF BARABAR HILNE WALA ANIMATION 👇 */
+@keyframes hotstarShake {
+    0%, 100% { 
+        transform: perspective(800px) rotateX(10deg) scale(1.06) translateX(0) translateY(0); 
+    }
+    25% { 
+        transform: perspective(800px) rotateX(10deg) scale(1.06) translateX(-5px) translateY(-4px); 
+    }
+    50% { 
+        transform: perspective(800px) rotateX(10deg) scale(1.06) translateX(5px) translateY(-4px); 
+    }
+    75% { 
+        transform: perspective(800px) rotateX(10deg) scale(1.06) translateX(0) translateY(-2px); 
+    }
+}
+
+.play-icon {
+    font-size: 1.6rem;
+    color: #ffffff !important; /* ← TRIANGLE ICON BHI WHITE */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+}
+
+
+
+.song-name-3d { 
+    color: #5cff8d;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    margin-top: 40px;
+    margin-bottom: px;
+    text-shadow: 
+        0 0 12px rgba(255, 157, 92, 0.8),
+        0 0 25px rgba(255, 157, 92, 0.5),
+        0 3px 0 rgba(204, 122, 61, 0.7);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+
+.info-boxes { 
+    display: flex; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.status {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    color: #00ffff;
+    font-size: 16px;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    padding: 12px 35px;
+    border-radius: 30px;
+    border: 3px solid #00ffff;
+    text-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff;
+    box-shadow: 0 0 35px rgba(0, 255, 255, 0.8), inset 0 0 15px rgba(0, 255, 255, 0.3);
+    z-index: 9999;
+    letter-spacing: 2px;
+ /* Upar karne ke liye */
+    margin-top: 25px;
+    order: 1;  /* Ye upar le aayega */
+
+}
+.player-creator {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background: linear-gradient(145deg, #d8d8d8, #c0c0c0);
+    border: 4px solid #00d4e0;
+    color: #666;
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    z-index: 9999;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: radial-gradient(circle at center, #000814, #000); */
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.menu-btns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: -70px; /* ← Ye line add kar de */
+}
+
+/* .menu-btns {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+/* MENU CHIP BUTTONS */
+.chip {
+    background: rgba(0, 240, 255, 0.05);
+    border: 2px solid #00f0ff;
+    border-radius: 50px;
+    padding: 10px 22px;
+    color: #00f0ff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 15px rgba(0, 240, 255, 0.3), /* Halka glow */
+        0 4px 0 #0088aa,
+        0 8px 15px rgba(0, 0, 0, 0.4);
+    transform: perspective(500px) rotateX(10deg);
+    text-shadow: 0 0 8px #00f0ff;
+}
+
+.chip:hover {
+    transform: perspective(500px) rotateX(0deg) translateY(-5px);
+    box-shadow: 
+        0 0 20px rgba(0, 240, 255, 0.5), /* Hover pe bhi halka */
+        0 8px 0 #0088aa,
+        0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.chip:active {
+    transform: perspective(500px) rotateX(10deg) translateY(2px);
+}
+
+.hd-chip {
+    background: rgba(255, 215, 0, 0.05);
+    border: 2px solid #ffd700;
+    color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3), 0 4px 0 #aa8800;
+    text-shadow: 0 0 8px #ffd700;
+}
+
+/* MODAL BASE */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px); /* Blur bhi kam kiya */
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL CONTENT - HALKA GLOW */
+.modal-content {
+    width: 200px;
+    border-radius: 25px;
+    padding: 40px 45px;
+    position: relative;
+    transform: perspective(1500px) rotateX(12deg);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: modalFloat 5s ease-in-out infinite;
+}
+
+/* ANIMATED RGB BORDER - HALKA */
+.modal-content::before {
+    content: '';
+    position: absolute;
+    inset: -2px; /* Pehle -3px tha */
+    border-radius: 27px;
+    z-index: -1;
+    filter: blur(8px); /* Pehle 15px tha */
+    opacity: 0.5; /* Pehle 1 tha - ab 50% halka */
+    animation: borderRGB 6s linear infinite;
+}
+
+.modal-content:hover {
+    transform: perspective(1500px) rotateX(0deg) translateY(-15px) scale(1.02);
+}
+
+/* >>> HAR BOX KA COLOR - GLOW HALKA <<< */
+
+/* ABOUT - CYAN HALKA */
+#aboutModal .modal-content {
+    background: linear-gradient(145deg, rgba(0, 18, 25, 0.98), rgba(0, 40, 55, 0.95));
+    border: 2px solid rgba(0, 240, 255, 0.7); /* Border bhi halka */
+    box-shadow: 
+        0 0 20px rgba(0, 240, 255, 0.4), /* Pehle 40px tha - ab 20px */
+        0 0 40px rgba(0, 240, 255, 0.2), /* Pehle 80px tha - ab 40px */
+        0 20px 0 #004d5c,
+        0 35px 50px rgba(0, 0, 0, 0.8),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+}
+#aboutModal .modal-content::before { background: linear-gradient(45deg, #00f0ff, #00b8ff, #00f0ff); }
+#aboutModal .modal-title { color: #00f0ff; text-shadow: 0 0 12px rgba(0, 240, 255, 0.6); } /* Text glow bhi halka */
+
+/* FAQ - PURPLE HALKA */
+#faqModal .modal-content {
+    background: linear-gradient(145deg, rgba(26, 0, 51, 0.98), rgba(45, 0, 82, 0.95));
+    border: 2px solid rgba(179, 0, 255, 0.7);
+    box-shadow: 0 0 20px rgba(179, 0, 255, 0.4), 0 0 40px rgba(179, 0, 255, 0.2), 0 20px 0 #4a0066;
+}
+#faqModal .modal-content::before { background: linear-gradient(45deg, #b300ff, #ff00ff, #b300ff); }
+#faqModal .modal-title { color: #b300ff; text-shadow: 0 0 12px rgba(179, 0, 255, 0.6); }
+
+/* TIPS - GREEN HALKA */
+#tipsModal .modal-content {
+    background: linear-gradient(145deg, rgba(0, 26, 0, 0.98), rgba(0, 51, 0, 0.95));
+    border: 2px solid rgba(0, 255, 64, 0.7);
+    box-shadow: 0 0 20px rgba(0, 255, 64, 0.4), 0 0 40px rgba(0, 255, 64, 0.2), 0 20px 0 #004d00;
+}
+#tipsModal .modal-content::before { background: linear-gradient(45deg, #00ff40, #00ff80, #00ff40); }
+#tipsModal .modal-title { color: #00ff40; text-shadow: 0 0 12px rgba(0, 255, 64, 0.6); }
+
+/* CONTACT - RED HALKA */
+#contactModal .modal-content {
+    background: linear-gradient(145deg, rgba(51, 0, 0, 0.98), rgba(82, 0, 0, 0.95));
+    border: 2px solid rgba(255, 0, 64, 0.7);
+    box-shadow: 0 0 20px rgba(255, 0, 64, 0.4), 0 0 40px rgba(255, 0, 64, 0.2), 0 20px 0 #660018;
+}
+#contactModal .modal-content::before { background: linear-gradient(45deg, #ff0040, #ff0080, #ff0040); }
+#contactModal .modal-title { color: #ff0040; text-shadow: 0 0 12px rgba(255, 0, 64, 0.6); }
+
+/* HD - GOLD HALKA */
+#hdModal .modal-content {
+    background: linear-gradient(145deg, rgba(51, 34, 0, 0.98), rgba(82, 64, 0, 0.95));
+    border: 2px solid rgba(255, 215, 0, 0.7);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2), 0 20px 0 #665200;
+}
+#hdModal .modal-content::before { background: linear-gradient(45deg, #ffd700, #ffaa00, #ffd700); }
+#hdModal .modal-title { color: #ffd700; text-shadow: 0 0 12px rgba(255, 215, 0, 0.6); }
+
+/* TEXT STYLES */
+.modal-title {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.modal-text {
+    color: #f0faff;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.modal-text strong {
+    color: #fff;
+    font-size: 19px;
+    display: block;
+    text-align: center;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 6px rgba(0,0,0,1);
+    letter-spacing: 1px;
+}
+
+.modal-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-text li {
+    padding: 13px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Line bhi halki */
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0,0,0,1);
+    transition: all 0.3s ease;
+}
+
+.modal-text li:hover {
+    transform: translateX(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.close-btn {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    padding: 13px 40px;
+    margin: 28px auto 0;
+    display: block;
+    color: #fff;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.2), /* Button glow bhi halka */
+        0 6px 0 rgba(255, 255, 255, 0.15),
+        0 10px 20px rgba(0,0,0,0.5);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 9px 0 rgba(255, 255, 255, 0.15);
+}
+
+.close-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 3px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* ANIMATIONS */
+@keyframes modalFloat {
+    0%, 100% { transform: perspective(1500px) rotateX(12deg) translateY(0px); }
+    50% { transform: perspective(1500px) rotateX(12deg) translateY(-15px); }
+}
+
+@keyframes borderRGB {
+    0% { filter: blur(8px) hue-rotate(0deg) brightness(1); } /* Brightness bhi kam ki */
+    100% { filter: blur(8px) hue-rotate(360deg) brightness(1); }
+}
+
+
+
+
+.info-boxes { 
+    display: flex; 
+    gap: 15px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    margin-top: -30px;
+    margin-bottom: 20px;
+}
+
+
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00f0ff;
+    border-radius: 25px;
+    padding: 10px 25px;
+    color: #00f0ff;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    position: relative;
+}
+
+.info-box:hover {
+    background: rgba(43, 199, 211, 0.15);
+    color: #00f0ff;
+    box-shadow: 
+        0 0 25px rgba(0, 240, 255, 0.8), 
+        0 0 40px rgba(0, 240, 255, 0.5);
+    transform: translateY(-5px) scale(1.05);
+}
+
+.info-box.hd-dark {
+    /* background: rgba(172, 6, 6, 0.9); */
+    border: 2px solid #00f0ff;
+    color:  #00f0ff!important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
+.info-box.hd-dark:hover {
+    background: rgba(0, 240, 255, 0.2)!important;
+    color: #ffffff!important;
+    box-shadow: 
+        0 0 35px rgba(0, 240, 255, 1), 
+        0 0 60px rgba(0, 240, 255, 0.7);
+}
+
+
+
+/* Popup Modal - Artificial Background */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background: rgba(20, 20, 30, 0.95);
+    border: 2px solid #00f0ff;
+    border-radius: 20px;
+    padding: 25px 30px 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 
+        0 0 40px rgba(0, 240, 255, 0.6),
+        inset 0 0 20px rgba(0, 240, 255, 0.1);
+    position: relative;
+    animation: slideUp 0.4s ease;
+    text-align: center;
+}
+
+.popup-content h2 {
+    color: #00f0ff;
+    font-size: 22px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+
+#popup-text {
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+/* CLOSE Button - Box Ke Neeche Center Me */
+/* .popup-close-btn {
+    background: rgba(255, 0, 85, 0.2);
+    border: 2px solid #ff0055;
+    border-radius: 20px;
+    padding: 8px 30px;
+    color: #ff0055;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+} */
+
+/* .popup-close-btn:hover {
+    background: rgba(255, 0, 85, 0.4);
+    color: #ffffff;
+    box-shadow: 
+        0 0 25px rgba(255, 0, 85, 0.8),
+        0 0 40px rgba(255, 0, 85, 0.5);
+    transform: scale(1.1);
+} */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+/* 3D Credit Box - Photo Jaisa */
+.credit-box-3d {
+    max-width: 550px;
+    margin: 40px auto;
+    background: linear-gradient(145deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border: 2px solid #00f0ff;
+    border-radius: 18px;
+    padding: 18px 40px;
+    cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateX(5deg);
+    box-shadow: 
+        0 0 30px rgba(0, 240, 255, 0.6),
+        0 10px 25px rgba(0, 240, 255, 0.4),
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+     /* Neeche karne ke liye */
+    margin-top: 15px;
+    order: 2;  /* Ye neeche le jayega */
+}
+
+ 
+
+
+.credit-box-3d:hover {
+    transform: perspective(1000px) rotateX(0deg) translateY(-8px) scale(1.03);
+    box-shadow: 
+        0 0 50px rgba(0, 240, 255, 0.9),
+        0 15px 35px rgba(0, 240, 255, 0.6),
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.credit-box-3d:active {
+    transform: perspective(1000px) rotateX(2deg) translateY(-2px) scale(0.98);
+}
+
+.credit-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00f0ff, #0088ff, #00f0ff);
+    border-radius: 18px;
+    z-index: -1;
+    opacity: 0;
+    filter: blur(15px);
+    transition: opacity 0.4s ease;
+}
+
+.credit-box-3d:hover .credit-glow {
+    opacity: 0.7;
+    animation: glowRotate 3s linear infinite;
+}
+
+.credit-text {
+    text-align: center;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(0, 240, 255, 0.6),
+        0 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+/* Popup Modal */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(158, 209, 238, 0.9);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+.popup-content {
+    background: linear-gradient(145deg, rgba(13, 13, 115, 0.98), rgba(10, 10, 113, 0.98));
+    border: 2px solid #00f0ff;
+    border-radius: 25px;
+    padding: 30px 35px 25px;
+    max-width: 550px;
+    width: 90%;
+    box-shadow: 
+        0 0 50px rgba(0, 240, 255, 0.7),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        inset 0 0 30px rgba(0, 240, 255, 0.1);
+    transform-style: preserve-3d;
+    animation: slideUp3D 0.5s ease;
+    text-align: center;
+}
+
+.popup-content h2 {
+    color: #00f0ff;
+    font-size: 26px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-shadow: 
+        0 0 15px rgba(0, 240, 255, 1),
+        0 0 30px rgba(0, 240, 255, 0.6);
+    border-bottom: 2px solid rgba(0, 240, 255, 0.3);
+    padding-bottom: 15px;
+}
+
+.bio-content {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.bio-content p {
+    color: #e0e0e0;
+    font-size: 15px;
+    line-height: 2;
+    letter-spacing: 1px;
+    margin: 12px 0;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.bio-content p:hover {
+    color: #00f0ff;
+    transform: translateX(8px);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+}
+
+.bio-content strong {
+    color: #00f0ff;
+    font-weight: 700;
+}
+
+.popup-close-btn {
+    background: rgba(255, 0, 85, 0.15);
+    border: 2px solid #ff0055;
+    border-radius: 25px;
+    padding: 10px 35px;
+    color: #ff0055;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
+}
+
+.popup-close-btn:hover {
+    background: rgba(255, 0, 85, 0.3);
+    color: #ffffff;
+    box-shadow: 
+        0 0 30px rgba(255, 0, 85, 0.9),
+        0 0 50px rgba(255, 0, 85, 0.6);
+    transform: scale(1.08);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp3D {
+    from { 
+        transform: translateY(60px) rotateX(-10deg); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0) rotateX(0deg); 
+        opacity: 1; 
+    }
+}
+
+@keyframes glowRotate {
+    0% { filter: blur(15px) hue-rotate(0deg); }
+    100% { filter: blur(15px) hue-rotate(360deg); }
+}
+
+
+/* SABKA COMMON UPAR-NEECHE ANIMATION */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* MUSIC ICON KA ALAG ANIMATION */
+@keyframes noteBounce {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-5px) rotate(-10deg);
+    }
+    75% {
+        transform: translateY(5px) rotate(10deg);
+    }
+}
+
+.status {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 9px 26px;
+    border-radius: 30px;
+    z-index: 50;
+    
+    /* BOX THODA MOTA + SHADOW */
+    box-shadow: 
+        0 3px 10px rgba(0,0,0,0.18),
+        inset 0 1px 3px rgba(255,255,255,1);
+    
+    /* SIRF NICHE RGB LINE - MOTA */
+    border-bottom: 3px solid transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-image: 
+        linear-gradient(#ffffff, #ffffff),
+        linear-gradient(90deg, 
+            #ff3b30 0%, 
+            #ff9500 15%, 
+            #ffcc00 30%, 
+            #34c759 45%, 
+            #00c7be 60%, 
+            #007aff 75%, 
+            #af52de 90%, 
+            #ff2d55 100%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    
+    /* TEXT MOTA + SAAF */
+    color: #0077ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+    white-space: nowrap;
+    
+    /* SLOW COLOR CHANGE - LYRICS KE HISAB SE */
+    animation: slowColorShift 8s ease-in-out infinite, rgbLine 4s linear infinite;
+}
+
+@keyframes slowColorShift {
+    0%, 100% { color: #0077ff; }
+    16% { color: #0088ff; }
+    33% { color: #0099ff; }
+    50% { color: #00aaff; }
+    66% { color: #0088ee; }
+    83% { color: #0077dd; }
+}
+
+@keyframes rgbLine {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+    .status {
+        top: 10px;
+        padding: 7px 20px;
+        font-size: 10px;
+        letter-spacing: 1.4px;
+        border-bottom: 2.5px solid transparent;
+    }
+}
+
+
+.player-screen {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    top: 0.1vh;
+    bottom: 8vh;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    /* background: #0a0a0a; */
+    padding: 1px 16px;
+    border-radius: 50px;
+    z-index: 50;
+    
+    /* PHOTO JAISA CYAN GLOW BORDER - SLIM */
+    border: 1px solid #00f2ff;
+    box-shadow: 
+        0 0.5px #00f2ff,
+        0 0 10px #00f2ff,
+        0 0 20px rgba(0,242,255,0.4),
+        inset 0 0.5px 1px rgba(0,242,255,0.2);
+    
+    /* RGB ANIMATION */
+    animation: rgbGlow 4s linear infinite;
+}
+
+@keyframes rgbGlow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.status {
+    color: #00f2ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 5px rgba(0,242,255,0.7);
+    white-space: nowrap;
+    line-height: 1;
+}
+
+@media (max-width: 480px) {
+    .player-screen {
+        bottom: 20px;
+        padding: 0.5px 12px;
+        border: 0.8px solid #00f2ff;
+    }
+    
+    .status {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
+}
+
+
+/* MODAL KA CSS - Tera wala hi hai */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 1000; justify-content: center; align-items: center; }
+.modal.show { display: flex; }
+.modal-content { background: linear-gradient(145deg, rgba(0,20,40,0.98), rgba(0,0,0,0.98)); border: 2px solid #00ffff; border-radius: 15px; padding: 20px 25px; max-width: 400px; width: 80%; box-shadow: 0 0 40px rgba(0,255,255,0.8); } 
+.modal-title { color: #00ffff; font-size: 1.3rem; font-weight: 800; margin-bottom: 12px; text-shadow: 0 0 15px #00ffff; }
+.modal-text { color: #fff; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; }
+.modal-text ul { list-style: none; padding-left: 0; }
+.modal-text ul li { padding: 5px 0; border-bottom: 1px solid rgba(0,255,255,0.2); }
+.modal-text ul li:before { content: "▶ "; color: #00ffff; margin-right: 8px; }
+.close-btn { background: rgba(255,0,128,0.2); border: 2px solid #ff0080; color: #ff0080; padding: 7px 22px; border-radius: 20px; font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 11px; }
+
+
+.player-creator span { color: #00d4e0; text-shadow: 0 0 10px rgba(0,212,224,1); }
+.title { color: #00ffff; font-size: 4.5rem; font-weight: 900; letter-spacing: 8px; text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff; }
+.song-name-3d { color: rgba(255, 157, 92, 0.8); font-size: 1.6rem; font-weight: 700; letter-spacing: 3px; margin-bottom: 50px; }
+.start-btn { background: linear-gradient(180deg, #00f2ff 0%, #00c8d4 50%, #00a0aa 100%); border: none; color: #001a1d; padding: 20px 90px; border-radius: 50px; font-weight: 900; font-size: 1.8rem; cursor: pointer; text-transform: uppercase; letter-spacing: 5px; display: flex; align-items: center; gap: 18px; margin-bottom: 40px; }
+.home-screen { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100vh; }
+.home-screen.hide { display: none; }
+.title-container { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+.music-icon { font-size: 5rem; filter: drop-shadow(0 0 20px #00ffff); }
+.player-screen { display: none; width: 100%; height: 100vh; position: relative; overflow: hidden; }
+.player-screen.show { display: block; }
+.lyrics-wrapper { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: flex-start; overflow-y: auto; overflow-x: hidden; padding: 50vh 0; mask-image: linear-gradient(transparent 0%, rgb(207, 19, 19) 10%, black 90%, transparent 100%); }
+.lyrics-container { width: 100%; max-width: 900px; text-align: center; position: relative; }
+.lyric-line { font-size: 3.2rem; font-weight: 700; color: rgba(255,255,255,0.4); text-shadow: 0 2px 20px rgba(0,0,0,1); margin: 70px 0; line-height: 1.5; transition: all 0.3s; letter-spacing: 1px; }
+.lyric-line.active { color: #14c3d0; opacity: 1; text-shadow: 0 2px 20px rgb(81, 178, 230), 0 0 50px rgba(218, 227, 227, 0.9); transform: scale(1.15); }
+.controls { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 100; }
+.btn { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 12px 30px; border-radius: 25px; font-weight: 600; font-size: 13px; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; }
+.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.star { position: absolute; width: 4px; height: 4px; background: #fff; border-radius: 50%; animation: twinkle 6s infinite; }
+@keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.2); } }
+.scroll-hint { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 12px; opacity: 0; transition: opacity 0.5s; }
+.scroll-hint.show { opacity: 1; }
