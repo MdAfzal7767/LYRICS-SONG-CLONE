@@ -992,7 +992,7 @@ body {
 
 /* MENU CHIP BUTTONS */
 .chip {
-    background: rgba(0, 240, 255, 0.05);
+    background: rgba(14, 218, 233, 0.05);
     border: 2px solid #00f0ff;
     border-radius: 50px;
     padding: 10px 22px;
@@ -1022,13 +1022,394 @@ body {
     transform: perspective(500px) rotateX(10deg) translateY(2px);
 }
 
-.hd-chip {
+/* ===== HD BOX KE ANDAR BACKGROUND IMAGE - FINAL FIX ===== */
+#hdModal .modal-content {
+    /* Purana background hatao */
+    background: none !important;
+    
+    /* Naya image background */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+        url('./hd-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* Border blue hi rakho */
+    border: 2px solid #00f0ff !important;
+    box-shadow: 
+        0 0 20px rgba(0, 240, 255, 0.5), 
+        0 0 40px rgba(0, 240, 255, 0.3),
+        0 20px 0 #004d5c !important;
+}
+
+/* Text ko clear karne ke liye */
+#hdModal .modal-title {
+    position: relative;
+    z-index: 2;
+    color: #00f0ff !important; 
+    text-shadow: 
+        0 0 12px rgba(0, 240, 255, 0.8), 
+        0 2px 6px rgba(0,0,0,1) !important; 
+}
+
+#hdModal .modal-text {
+    position: relative;
+    z-index: 2;
+}
+
+#hdModal .modal-text ul li {
+    background: rgba(0, 0, 0, 0.4) !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
+    margin: 8px 0 !important;
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3) !important;
+}
+
+#hdModal .close-btn {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border: 2px solid #00f0ff !important;
+    color: #00f0ff !important;
+    backdrop-filter: blur(5px);
+}
+
+/* ===== FAQ KO CHHOD KE SABHI BOX ME IMAGE ===== */
+
+/* 1. SAB BOX KA PURANA BACKGROUND HATAO - FAQ KO CHHOD KE */
+#hdModal .modal-content,
+#aboutModal .modal-content,
+#contactModal .modal-content,
+#proTipsModal .modal-content {
+    background: none !important;
+}
+
+/* ===== FAQ BOX KO CHHOTA KARNE KA CODE ===== */
+#faqModal .modal-content {
+    width: 400px !important;        /* Width kam kar di */
+    max-width: 90% !important;      /* Mobile ke liye */
+    max-height: 80vh !important;    /* Height kam kar di */
+    padding: 15px 20px !important;  /* Andar ka gap kam */
+    overflow-y: auto !important;    /* Scroll aa jayega agar content jyada ho */
+}
+
+/* FAQ ke andar wale box bhi chhote karo */
+#faqModal .modal-text ul li {
+    padding: 8px 12px !important;   /* Box chhote ho jayenge */
+    margin: 6px 0 !important;       /* Gap kam */
+    font-size: 14px !important;     /* Text thoda chhota */
+}
+
+#faqModal .modal-title {
+    font-size: 20px !important;     /* FAQ heading chhoti */
+    margin-bottom: 10px !important;
+}
+
+#faqModal .close-btn {
+    padding: 6px 20px !important;   /* Close button chhota */
+    font-size: 14px !important;
+}
+
+
+
+
+/* 2. HD BOX ME IMAGE */
+/* #hdModal .modal-content {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+        url('image01.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 2px solid #00f0ff !important;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6) !important;
+} */
+
+/* 3. ABOUT BOX ME IMAGE */
+#aboutModal .modal-content {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+        url('./about-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 2px solid #00f0ff !important;
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6) !important;
+}
+
+/* 4. CONTACT BOX ME IMAGE */
+#contactModal .modal-content {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+        url('./contact-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 2px solid #ff0040 !important;
+    box-shadow: 0 0 25px rgba(255, 0, 64, 0.6) !important;
+}
+
+/* 5. PRO TIPS BOX ME IMAGE */
+#proTipsModal .modal-content {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+        url('./protips-bg.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border: 2px solid #00ff40 !important;
+    box-shadow: 0 0 25px rgba(0, 255, 64, 0.6) !important;
+}
+
+/* 6. FAQ BOX KO WAISA HI REHNE DO - RED THEME */
+#faqModal .modal-content {
+    background: linear-gradient(145deg, #8b0000, #ff1744) !important;
+    border: 2px solid #ff00ff !important;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.6) !important;
+}
+
+/* 7. SAB BOX KA TEXT CLEAR DIKHE */
+.modal-content .modal-title,
+.modal-content .modal-text,
+.modal-content .close-btn {
+    position: relative !important;
+    z-index: 2 !important;
+    color: #fff !important;
+}
+
+#hdModal .modal-title, #aboutModal .modal-title {
+    color: #00f0ff !important;
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.8) !important;
+}
+
+#contactModal .modal-title {
+    color: #ff0040 !important;
+    text-shadow: 0 0 15px rgba(255, 0, 64, 0.8) !important;
+}
+
+#proTipsModal .modal-title {
+    color: #00ff40 !important;
+    text-shadow: 0 0 15px rgba(0, 255, 64, 0.8) !important;
+}
+
+#faqModal .modal-title {
+    color: #ff00ff !important;
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8) !important;
+}
+
+.modal-content .modal-text ul li {
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 8px !important;
+    padding: 10px 15px !important;
+    margin: 8px 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(5px) !important;
+}
+/* .info-box.hd-dark {
+    background: rgba(0, 0, 255, 0.1) !important;
+    border: 2px solid #00f0ff !important;
+    color: #00f0ff !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4) !important;
+}
+.info-box.hd-dark:hover {
+    background: rgba(0, 240, 255, 0.2) !important;
+    color: #ffffff !important;
+    box-shadow: 
+        0 0 35px rgba(0, 240, 255, 1), 
+        0 0 60px rgba(0, 240, 255, 0.7) !important;
+} */
+
+/* .hd-chip {
     background: rgba(255, 215, 0, 0.05);
     border: 2px solid #ffd700;
     color: #ffd700;
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.3), 0 4px 0 #aa8800;
     text-shadow: 0 0 8px #ffd700;
+} */
+
+
+/* ===== SOCIAL BUTTONS FIX - 100% WORKING ===== */
+#contactModal .social-links {
+    margin-top: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
 }
+
+#contactModal .social-btn {
+    display: inline-block !important;
+    padding: 10px 18px !important;
+    border-radius: 20px !important;
+    text-decoration: none !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    color: #fff !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* LinkedIn */
+#contactModal .social-btn.linkedin {
+    background: #0077b5 !important;
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.6) !important;
+}
+#contactModal .social-btn.linkedin:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 0 25px rgba(0, 119, 181, 1) !important;
+}
+
+/* GitHub */
+#contactModal .social-btn.github {
+    background: #24292e !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3) !important;
+}
+#contactModal .social-btn.github:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Instagram */
+#contactModal .social-btn.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+    box-shadow: 0 0 15px rgba(220, 39, 67, 0.6) !important;
+}
+#contactModal .social-btn.instagram:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 0 25px rgba(220, 39, 67, 1) !important;
+}
+
+
+/* ===== COMMENT FORM MODAL - FINAL FIXED ===== */
+#commentModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+#commentModal .modal-content {
+    background: rgba(0, 20, 40, 0.98) !important;
+    border: 2px solid #00f0ff !important;
+    border-radius: 15px !important;
+    padding: 25px 30px !important;
+    max-width: 450px !important;
+    width: 90% !important;
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.7) !important;
+}
+
+#commentModal .modal-title {
+    color: #00f0ff !important;
+    text-align: center !important;
+    font-size: 22px !important;
+    margin-bottom: 20px !important;
+    text-shadow: 0 0 10px #00f0ff !important;
+}
+
+.comment-form {
+    padding: 0 !important;
+}
+
+.form-group {
+    margin-bottom: 18px !important;
+    text-align: left !important;
+}
+
+.form-group label {
+    display: block !important;
+    color: #00f0ff !important;
+    margin-bottom: 6px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100% !important;
+    padding: 12px 15px !important;
+    border: 1px solid rgba(0, 240, 255, 0.4) !important;
+    background: rgba(0, 10, 20, 0.8) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-size: 14px !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+    font-family: inherit !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 1px solid #00f0ff !important;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5) !important;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* BUTTONS FIX - OVERLAP KHATAM */
+.form-buttons {
+    display: flex !important;
+    gap: 15px !important;
+    justify-content: center !important;
+    margin-top: 25px !important;
+    flex-wrap: wrap !important;
+}
+
+.submit-btn {
+    background: #00f0ff !important;
+    color: #000 !important;
+    border: none !important;
+    border-radius: 25px !important;
+    padding: 12px 30px !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    min-width: 140px !important;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.8) !important;
+}
+
+#commentModal .close-btn {
+    background: transparent !important;
+    color: #ff3d00 !important;
+    border: 2px solid #ff3d00 !important;
+    border-radius: 25px !important;
+    padding: 10px 28px !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    min-width: 140px !important;
+}
+
+#commentModal .close-btn:hover {
+    background: #ff3d00 !important;
+    color: #fff !important;
+    box-shadow: 0 0 20px rgba(255, 61, 0, 0.8) !important;
+}
+
+/* Comment Button Style */
+#contactModal .social-btn.email {
+    background: #ff3d00 !important;
+    box-shadow: 0 0 15px rgba(255, 61, 0, 0.6) !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+#contactModal .social-btn.email:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 0 25px rgba(255, 61, 0, 1) !important;
+}
+
 
 /* MODAL BASE */
 .modal {
@@ -1800,3 +2181,4 @@ body {
 @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 1; transform: scale(1.2); } }
 .scroll-hint { position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 12px; opacity: 0; transition: opacity 0.5s; }
 .scroll-hint.show { opacity: 1; }
+
