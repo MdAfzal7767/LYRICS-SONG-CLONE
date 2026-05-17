@@ -156,6 +156,55 @@ body {
 }
 
 
+/* ===== MOBILE ME DONO BOX BARABAR ===== */
+@media only screen and (max-width: 768px) {
+    .status {
+        position: fixed !important;
+        top: 15px !important;
+        left: 15px !important;
+        right: auto !important;
+        transform: none !important;
+        font-size: 8px !important;
+        padding: 6px 14px !important;
+        letter-spacing: 1px !important;
+        margin: 0 !important;
+        z-index: 100 !important;
+    }
+
+    .afzal-box {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        left: auto !important;
+        transform: none !important;
+        padding: 5px 12px !important;
+        font-size: 8px !important;
+        letter-spacing: 1px !important;
+        margin: 0 !important;
+        z-index: 100 !important;
+    }
+    
+    .afzal-box .by-text {
+        font-size: 8px !important;
+        margin-right: 3px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .status {
+        top: 12px !important;
+        left: 10px !important;
+        font-size: 7px !important;
+        padding: 5px 10px !important;
+    }
+    
+    .afzal-box {
+        top: 12px !important;
+        right: 10px !important;
+        padding: 4px 9px !important;
+        font-size: 7px !important;
+    }
+}
 
 
 
@@ -1569,6 +1618,79 @@ body {
         transform: translateY(5px) rotate(10deg);
     }
 }
+
+
+
+/* ===== DONO BOX KO SAME LINE ME BARABAR KARO ===== */
+@media only screen and (max-width: 768px) {
+    /* Status box ko center me rakho */
+    .status {
+        position: fixed !important;
+        top: 15px !important;
+        left: 15px !important;
+        right: auto !important;
+        transform: none !important;
+        font-size: 8px !important;
+        padding: 6px 14px !important;
+        letter-spacing: 1px !important;
+        z-index: 100 !important;
+    }
+
+    /* Afzal box ko status ke barabar right me rakho */
+    .afzal-box {
+        position: fixed !important;
+        top: 15px !important;
+        right: 15px !important;
+        left: auto !important;
+        transform: none !important;
+        padding: 5px 12px !important;
+        font-size: 8px !important;
+        letter-spacing: 1px !important;
+        z-index: 100 !important;
+    }
+    
+    /* BY text chhota kar */
+    .afzal-box .by-text {
+        font-size: 8px !important;
+        margin-right: 3px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .status {
+        top: 12px !important;
+        left: 10px !important;
+        font-size: 7px !important;
+        padding: 5px 12px !important;
+    }
+    
+    .afzal-box {
+        top: 12px !important;
+        right: 10px !important;
+        padding: 4px 10px !important;
+        font-size: 7px !important;
+    }
+    
+    .afzal-box .by-text {
+        font-size: 7px !important;
+        margin-right: 2px !important;
+    }
+}
+
+/* iPhone Notch ke liye */
+@supports (padding: max(0px)) {
+    @media only screen and (max-width: 768px) {
+        .status { 
+            top: max(15px, env(safe-area-inset-top)) !important; 
+        }
+        .afzal-box { 
+            top: max(15px, env(safe-area-inset-top)) !important; 
+        }
+    }
+}
+
+
+
 
 .status {
     position: fixed;
